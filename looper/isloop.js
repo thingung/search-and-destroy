@@ -1,8 +1,20 @@
 'use strict';
 
 // Complete this algo
-const isLoop = (linkedList) => {
+const isLoop = (linkedlist) => {
+  let firstNode = linkedlist.head;
+  let secondNode = firstNode.next;
 
+  while (firstNode !== secondNode) {
+    if (firstNode === null || secondNode === null) {
+      return false;
+    }
+
+    firstNode = firstNode.next;
+    secondNode = secondNode.next.next;
+  }
+
+  return true;
 };
 
 /*
@@ -14,8 +26,21 @@ const isLoop = (linkedList) => {
 
 */
 
-const findLoop = (linkedList) => {
+const findLoop = (linkedlist) => {
+  const observedValues = {};
 
+  let currNode = linkedlist.head;
+  let prevNode;
+
+  while (currNode) {
+    if (observedValues[currNode.value]) return prevNode;
+    else observedValues[currNode.value] = 1;
+
+    prevNode = currNode;
+    currNode = currNode.next;
+  }
+
+  return false;
 };
 
 module.exports = {

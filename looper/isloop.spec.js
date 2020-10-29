@@ -38,10 +38,13 @@ describe('isLoop function', function () {
 });
 
 // EXTRA CREDIT: test the findLoop function
-xdescribe('findLoop function', function () {
-  xit('returns...', function () {
-    // add expect statements here
+describe('findLoop function', function () {
+  it('returns beginning loop node if linked list contains a loop', function () {
+    expect(findLoop(test1)).to.equal(test1.getNthNode(6));
+    expect(findLoop(test2)).to.equal(test2.getNthNode(9));
   });
 
-  // ...
+  it('returns false if linked list contains no loop', function () {
+    expect(findLoop(test3)).to.equal(false);
+  });
 });
