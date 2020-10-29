@@ -1,17 +1,24 @@
 'use strict';
 
-//Complete this algo
-const isLoop = (linkedlist) => {
+// Complete this algo
+const isLoop = (linkedList) => {
 
 };
 
-
 /*
-EXTRA CREDIT:
+  EXTRA CREDIT:
 
-Write a function findLoop() that consumes a linkedlist with a loop
-This function should return the Node value the loop begins at
-Remember to write some test specs too!
+  Write a function findLoop() that consumes a linkedList with a loop
+  This function should return the Node value the loop begins at
+  Remember to write some test specs too!
 
 */
-module.exports = isLoop
+
+const findLoop = (linkedList) => {
+
+};
+
+module.exports = {
+  isLoop,
+  findLoop
+};
