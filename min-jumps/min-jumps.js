@@ -1,8 +1,8 @@
 'use strict';
 
 // Complete this algo
-const minJumps = arr => {
+const minJumps = (arr) => {
 
 };
 
-module.exports = minJumps
+module.exports = minJumps;
