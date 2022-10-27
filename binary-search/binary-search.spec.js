@@ -5,6 +5,7 @@ const binarySearch = require('./binary-search');
 const test1 = [1,3,  4,  5,10,   15,     20,22,23,98,1000] //array.length = 11;
 const test2 = [-3,-2,0, 9, 10, 11, 12, 15, 17, 18, 19, 20];
 const test3 = [-0.5, 0.03, 2.6, 3, 3.5, 3.777777, 5];
+const test4 = 5;
 
 
 describe('Binary Search', () => {
@@ -20,6 +21,13 @@ describe('Binary Search', () => {
 		expect(binarySearch(test3, 4)).to.equal(false);
 	});
 
-	//(OPTIONAL) WRITE YOUR OWN TESTS HERE. Include >=1 edge case :)
-
+	//(OPTIONAL) WRITE YOUR OWN TESTS HERE. Include >= edge case :)
+	it('returns an error if the input is not an array', () => {
+		expect(binarySearch(test4, 1)).to.equal("-1");
+		expect(binarySearch({a:1}, 1)).to.equal("-1")
+	})
+	it('returns an error if the target is not a number', () => {
+		expect(binarySearch(test1, 'String')).to.equal('error')
+		expect(binarySearch(test1, 'Boolean')).to.equal('error')
+	})
 });
