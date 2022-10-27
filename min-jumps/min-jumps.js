@@ -1,10 +1,30 @@
 'use strict';
 
 // Complete this algo
-const minJumps = arr => {
-  if( arr[0] - (arr.length -1) >= 0) return 1;
+// const minJumps = arr => {
+//   if( arr[0] - (arr.length -1) >= 0) return 1;
 
+
+
+// };
+
+const minJumps = arr => {
+	let jumps = arr.map(el => Infinity)
+	jumps[0] = 0;
+
+	for(let i = 1; i < jumps.length; i++){
+    console.log("I: jumps at", i, ":", jumps)
+		for(let j = 0; j <= i; j++){
+    console.log("J: jumps at", j, ":", jumps)
+			if(j + arr[j] >= i) {
+				jumps[i] = Math.min(jumps[i], jumps[j] + 1)
+			}
+		}
+	}
+	return jumps[arr.length - 1];
 };
+
+module.exports = minJumps
 
 module.exports = minJumps
 
